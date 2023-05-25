@@ -35,4 +35,9 @@ class CarsController < ApplicationController
     @car.destroy
     redirect_to cars_path
   end
+
+  private
+  def car_params
+    params.require(:car).permit(:make, :model, :year, :price_per_day)
+  end
 end
