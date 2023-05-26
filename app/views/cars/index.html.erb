@@ -1,2 +1,28 @@
-<h1>Hey Mzi</h1>
-<%= @cars %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>All Cars</h1>
+      <ul class="list-group mb-3">
+        <% @cars.each do |car| %>
+          <li class="list-group-item">
+            <%= link_to car.make, car_path(car) %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "Rent A Ride", new_car_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <% @cars.each do |car| %>
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= car.make %></h2>
+        <p><%= car.model %></p>
+      </div>
+      <h2 class="card-trip-pricing">R <%= car.price_per_day %></h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+  <% end %>
+</div>

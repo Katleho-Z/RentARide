@@ -1,5 +1,4 @@
 class CarsController < ApplicationController
-
   def index
     @cars = Car.all
   end
@@ -17,7 +16,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to cars_path
     else
-    render :new
+      render :new
     end
   end
 
@@ -37,6 +36,7 @@ class CarsController < ApplicationController
   end
 
   private
+
   def car_params
     params.require(:car).permit(:make, :model, :year, :price_per_day)
   end
