@@ -1,28 +1,28 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514053514818-a89e7ce304e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80);">
+  <h1>Welcome to Rent A Ride</h1>
+  <p>Discover a Wide Selection of Reliable and Affordable Rental Cars with Rent A Ride</p>
+  <a href="/cars" class="btn">Browse Cars</a>
+</div>
+
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>All Cars</h1>
-      <ul class="list-group mb-3">
-        <% @cars.each do |car| %>
-          <li class="list-group-item">
-            <%= link_to car.make, car_path(car) %>
-          </li>
-        <% end %>
-      </ul>
-      <%= link_to "Rent A Ride", new_car_path, class: 'btn btn-primary' %>
-    </div>
-  </div>
-  <% @cars.each do |car| %>
-  <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= car.make %></h2>
-        <p><%= car.model %></p>
+    <% @cars.each do |car| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+
+          <% if car.image_url.present? %>
+            <%= image_tag car.image_url, class: "card-img-top", alt: car.make %>
+          <% else %>
+            <div class="placeholder-image"></div>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= "#{car.make} - #{car.model}" %></h5>
+            <p class="card-text">Price per day: <%= car.price_per_day %></p>
+            <%= link_to "Hire Now", "#", class: "btn btn-primary" %>
+          </div>
+        </div>
       </div>
-      <h2 class="card-trip-pricing">R <%= car.price_per_day %></h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
