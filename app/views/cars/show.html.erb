@@ -1,0 +1,27 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img-ik.cars.co.za/news-site-za/images/2019/06/Toyota-Camry-4.jpg);">
+  <div class="container">
+    <h1>Camry Hybrid 2021</h1>
+    <p>Unleash Your Drive: Experience Power, Comfort, and Style with the Toyota Camry.</p>
+    <a class="btn btn-flat" href="<%= new_car_booking_path(@car) %>">Rent now </a>
+  </div>
+</div>
+
+
+
+  <div class="container">
+
+    <hr>
+
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title"><%= @car.make %> <%= @car.model %></h5>
+      </div>
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">Price per Day: $<%= @car.price_per_day %></h6>
+        <p class="card-text">Car Owner: <%= @user.email %></p>
+      </div>
+    </div>
+
+    <br>
+    <a href="<%= cars_path %>" class="btn btn-primary">Back to Cars List</a>
+  </div>
