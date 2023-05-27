@@ -1,0 +1,6 @@
+index page
+<% @bookings.each do | booking | %>
+  <%= booking.car.model %>
+<%= booking.user.name %>
+<%= link_to "booking details",booking_path(booking) %>
+<% end %>
