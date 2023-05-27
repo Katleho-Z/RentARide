@@ -1,1 +1,27 @@
-<h1>ET</h1>
+<h1>Add Your Car</h1>
+
+<%= form_with(model: @car, url: cars_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_per_day %>
+    <%= form.number_field :price_per_day %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create Car" %>
+  </div>
+<% end %>
