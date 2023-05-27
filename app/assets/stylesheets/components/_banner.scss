@@ -2,19 +2,45 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(https://images.unsplash.com/photo-1529369623266-f5264b696110?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 36px;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 22px;
   color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  opacity: 0.8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  margin: 20px 0;
+}
+
+.banner .btn {
+  display: inline-block;
+  background-color: #ff4081;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.banner .btn:hover {
+  background-color: #ff206f;
+
 }
