@@ -1,27 +1,33 @@
-<h1>Add Your Car</h1>
+<!-- app/views/cars/new.html.erb -->
+<h1>Rent Your Ride</h1>
 
-<%= form_with(model: @car, url: cars_path, local: true) do |form| %>
-  <div class="field">
+<%= form_with(model: @car, url: cars_path, local: true, class: "car-form", multipart: true) do |form| %>
+  <div class="form-group">
     <%= form.label :brand %>
-    <%= form.text_field :brand %>
+    <%= form.text_field :brand, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :model %>
-    <%= form.text_field :model %>
+    <%= form.text_field :model, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.number_field :year %>
-  </div>
+  <div class="form-group">
+  <%= form.label :year %>
+  <%= form.date_select :year, { start_year: Date.current.year - 20, end_year: Date.current.year, use_short_month: true, discard_day: true }, class: "form-control" %>
+</div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :price_per_day %>
-    <%= form.number_field :price_per_day %>
+    <%= form.number_field :price_per_day, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Create Car" %>
+    <%= form.submit "Create Car", class: "btn btn-primary" %>
   </div>
 <% end %>
