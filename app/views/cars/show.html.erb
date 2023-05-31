@@ -1,11 +1,30 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img-ik.cars.co.za/news-site-za/images/2019/06/Toyota-Camry-4.jpg);">
-  <div class="container">
-    <h1>Camry Hybrid 2021</h1>
-    <p>Unleash Your Drive: Experience Power, Comfort, and Style with the Toyota Camry.</p>
-    <a class="btn btn-flat" href="<%= new_car_booking_path(@car) %>">Rent now </a>
-  </div>
-</div>
 
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://img-ik.cars.co.za/news-site-za/images/2019/06/Toyota-Camry-4.jpg" class="rounded mx-auto d-block" width=600px height=450px alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
   <div class="container">
@@ -25,3 +44,12 @@
     <br>
     <a href="<%= cars_path %>" class="btn btn-primary">Back to Cars List</a>
   </div>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img-ik.cars.co.za/news-site-za/images/2019/06/Toyota-Camry-4.jpg);">
+  <div class="container">
+    <h1>Camry Hybrid 2021</h1>
+    <p>Unleash Your Drive: Experience Power, Comfort, and Style with the Toyota Camry.</p>
+    <%# <a class="btn btn-flat" href="<%= new_car_booking_path(@car) %>">Rent now </a> %>
+  </div>
+</div>
