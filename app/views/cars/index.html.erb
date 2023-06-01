@@ -1,10 +1,26 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1529369623266-f5264b696110?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80);">
   <div class="container">
-    <h1><strong>Rent A Ride <strong></h1>
-    <p>Discover a Wide Selection of Reliable and Affordable Rental Cars with Rent A Ride</p>
-     <a href="/cars" class="btn">Browse Cars</a>
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: search_cars_url, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a ride" %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary ml-2" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="text-center mt-3">
+
+
+
   </div>
+  <div class="text-center mt-3 mb-4">
+      <p>Discover a Wide Selection of Reliable and Affordable Rental Cars with Rent A Ride</p>
+      <a href="/cars/new" class="btn btn-secondary">Rent Your Ride</a>
+    </div>
+    </div>
 </div>
+
 
 
 
@@ -22,7 +38,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= "#{car.make} - #{car.model}" %></h5>
             <p class="card-text">Price per day: <%= car.price_per_day %></p>
-            <%= link_to "Hire Now", "#", class: "btn btn-primary" %>
+            <%= link_to "Show More", car_path(car), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
