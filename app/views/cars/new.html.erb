@@ -1,33 +1,17 @@
 <!-- app/views/cars/new.html.erb -->
-<h1>Rent Your Ride</h1>
-
-<%= form_with(model: @car, url: cars_path, local: true, class: "car-form", multipart: true) do |form| %>
-  <div class="form-group">
-    <%= form.label :brand %>
-    <%= form.text_field :brand, class: "form-control" %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add your car :</h3>
+        <%= simple_form_for @car do |f| %>
+          <%= f.input :make, placeholder: 'Honda' %>
+          <%= f.input :model, placeholder: 'H6' %>
+          <%= f.input :price_per_day, placeholder: 'Please insert a daily rate in Rands' %>
+          <%= f.input :image, as: :file %>
+          <%= f.submit class: 'btn-ghost' %>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= form.label :model %>
-    <%= form.text_field :model, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-  <%= form.label :year %>
-  <%= form.date_select :year, { start_year: Date.current.year - 20, end_year: Date.current.year, use_short_month: true, discard_day: true }, class: "form-control" %>
 </div>
-
-  <div class="form-group">
-    <%= form.label :price_per_day %>
-    <%= form.number_field :price_per_day, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :image %>
-    <%= form.file_field :image, class: "form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Create Car", class: "btn btn-primary" %>
-  </div>
-<% end %>
