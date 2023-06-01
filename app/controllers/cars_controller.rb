@@ -9,20 +9,27 @@ class CarsController < ApplicationController
   end
 
   def new
-    @cars = Car.new
+    @car = Car.new
   end
 
   def create
     @car = Car.new(car_params)
+    @car.user = current_user
     if @car.save
       redirect_to cars_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @cars = Car.find(params[:id])
+    @car = Car.find(params[:id])
+  end
+
+  def search
+    @query = params[:query]
+    @results = Car.where("model LIKE ?", "%#{@query}%")
+    render :search_results
   end
 
   def update
