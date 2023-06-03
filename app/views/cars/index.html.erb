@@ -8,11 +8,7 @@
         <% end %>
       </div>
     </div>
-
     <div class="text-center mt-3">
-
-
-
   </div>
   <div class="text-center mt-3 mb-4">
       <p>Discover a Wide Selection of Reliable and Affordable Rental Cars with Rent A Ride</p>
@@ -20,16 +16,11 @@
     </div>
     </div>
 </div>
-
-
-
-
 <div class="container">
   <div class="row">
     <% @cars.each do |car| %>
       <div class="col-md-4">
         <div class="card mb-4">
-
           <% if car.image_url.present? %>
             <%= image_tag car.image_url, class: "card-img-top", alt: car.make %>
           <% else %>
