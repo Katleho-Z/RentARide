@@ -1,8 +1,27 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img-ik.cars.co.za/news-site-za/images/2019/06/Toyota-Camry-4.jpg);">
   <div class="container">
     <!-- <h1 style="color: #fff; text-align: center; padding-top: 120px;">Unleash Your Drive: Experience Power, Comfort, and Style with the Toyota Camry.</h1> -->
+
+
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-</div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.edmunds.com/assets/m/toyota/camry-hybrid/2021/oem/2021_toyota_camry-hybrid_sedan_xse_fq_oem_1_815.jpg" class="rounded mx-auto d-block" width=600px height=450px alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fcpt11-1.fna.fbcdn.net/v/t39.30808-6/222516235_4220506721373599_1594291529439182321_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9267fe&_nc_ohc=zXzn6mvfQnUAX_fp-M6&_nc_ht=scontent.fcpt11-1.fna&oh=00_AfC--ft8jeH1GhL4gq7GDLrTEvIVx1EExnk37YF_kEikuw&oe=647D5748" class="rounded mx-auto d-block" width=600px height=450px alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://toyota-cms-media.s3.amazonaws.com/wp-content/uploads/2019/03/2019_Toyota_Camry_XLE_Hybrid_16_033314E7AFF0378D5706621F6978307E16D3EFC3-1500x900.jpg" class="rounded mx-auto d-block" width=600px height=450px alt="...">
+    </div>
+
+  </div>
+
 
 <div class="container">
   <hr>
@@ -21,3 +40,42 @@
   </div>
   <br>
   <a href="<%= cars_path %>" class="btn btn-primary">Back
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+  <div class="container">
+
+    <hr>
+
+    <%# <div class="card">
+      <div class="card-header">
+        <h5 class="card-title"><%= @car.make %> <%= @car.model %></h5>
+      <%# </div>
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">Price per Day: $<%= @car.price_per_day %></h6>
+        <p class="card-text">Car Owner: <%= @user.email %></p>
+      </div>
+    </div> %> %>
+
+    <br>
+    <a href="<%= cars_path %>" class="btn btn-primary">Back to Cars List</a>
+  </div>
+
+
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img-ik.cars.co.za/news-site-za/images/2019/06/Toyota-Camry-4.jpg);">
+  <div class="container">
+    <h1>Camry Hybrid 2021</h1>
+    <p>Unleash Your Drive: Experience Power, Comfort, and Style with the Toyota Camry.</p> %>
+    <%# <a class="btn btn-flat" href="<%= new_car_booking_path(@car) %>">Rent now </a> %>
+  </div>
+</div>
+
